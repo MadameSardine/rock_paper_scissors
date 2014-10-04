@@ -23,4 +23,7 @@ Then(/^I should be asked to "(.*?)"$/) do |text|
   expect(page).to have_content(text)
 end
 
+When(/^I dont input my name$/) do
+  click_button 'Register'
+end
 

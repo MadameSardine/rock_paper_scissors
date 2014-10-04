@@ -12,3 +12,8 @@ Feature: Starting the game
 		Given I am on the new game page
 		When I register my name
 		Then I should be asked to "choose one option"
+
+	Scenario: Name not given
+		Given I am on the new game page
+		When I dont input my name
+		Then I should be asked to "choose one option"
