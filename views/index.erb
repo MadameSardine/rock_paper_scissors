@@ -1,1 +1,5 @@
 <a href="/new_game">New Game</a>
+
+<% if @player1 %>
+<h1><%= @player1.capitalize %>, please choose one option</h1>
+<% end %>
