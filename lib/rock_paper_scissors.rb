@@ -31,10 +31,14 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   post '/option' do
-  	option_name = params[:option]
-  	option = GAME.options.find{|option| option.name == option_name}
-  	GAME.player1.select(option)
-  	redirect '/new_game/result'
+  	if params[:option].nil?
+      redirect '/'
+    else
+      option_name = params[:option]
+    	option = GAME.options.find{|option| option.name == option_name}
+    	GAME.player1.select(option)
+    	redirect '/new_game/result'
+    end
   end
 
   get '/new_game/result' do

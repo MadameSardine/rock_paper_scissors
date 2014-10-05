@@ -15,3 +15,7 @@ end
 Given(/^I have played a game$/) do
   visit'/new_game/result'
 end
+
+When(/^I don't choose an option$/) do
+  click_button 'Send'
+end
