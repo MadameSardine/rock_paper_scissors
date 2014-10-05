@@ -4,10 +4,10 @@ Given(/^I have registered$/) do
 end
 
 When(/^I choose rock$/) do
-  choose("option", :option => "rock")
+  choose("option", :option => "Rock")
   click_button 'Send'
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('BEATS')
+  expect(page).to have_content('beat' || 'EVEN')
 end
