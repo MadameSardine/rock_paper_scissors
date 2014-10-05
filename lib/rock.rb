@@ -4,11 +4,11 @@ class Rock
 		true
 	end
 
-	def beat_paper
-		false
+	def name
+		"Rock"
 	end
 
-	def beat_rock
+	def beat_paper
 		false
 	end
 
