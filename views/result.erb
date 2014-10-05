@@ -6,7 +6,7 @@
 <% if @option2.class == @option1.class %>
 	<p>EVEN!</p>
 <% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
-	<p><%= @option1 %> beats <%= @option2 %>. YOU WIN!</p>
+	<p><%= @option1.name %> beats <%= @option2.name %>. YOU WIN!</p>
 <% else %>
-	<p><%= @option2 %> beats <%= @option1 %>. YOU LOSE!</p>
+	<p><%= @option2.name %> beats <%= @option1.name %>. YOU LOSE!</p>
 <% end %>
