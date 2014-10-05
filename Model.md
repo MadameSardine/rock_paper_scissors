@@ -1,16 +1,23 @@
-Player (game)
+Player (game, rock, paper, scissors)
 * has a name
-* can play a game
 * can choose an option
-* can win
 
 Game(player, option)
-* has a player
-* has 3 options
-* chooses a random option
-* can win
+* has players
+* has several options
+* can choose a random option
 
-Option(player, game)
-* has a name: rock, paper or scissors
+Rock (game, player)
+* has a name 
+* can beat Scissors
+* can't beat Paper
 
+Paper (game, player)
+* has a name 
+* can beat Rock
+* can't beat Scissors
 
+Scissors (game, player)
+* has a name 
+* can beat Paper
+* can't beat Rock
