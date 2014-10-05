@@ -1,0 +1,12 @@
+<a href="/new_game">New Game</a>
+
+<p>Player 1 chose: <%= @option1.name %> </p>
+<p>Player 2 chose: <%= @option2.name %> </p>
+
+<% if @option2.class == @option1.class %>
+	<p>EVEN!</p>
+<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
+	<p><%= @option1 %> beats <%= @option2 %>. YOU WIN!</p>
+<% else %>
+	<p><%= @option2 %> beats <%= @option1 %>. YOU LOSE!</p>
+<% end %>
