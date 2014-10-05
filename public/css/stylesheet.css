@@ -1,0 +1,45 @@
+body {
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+}
+header {
+	width: 80%;
+	margin-left: 10%;
+ 
+}
+
+header h1 {
+	text-align: center;
+	font-size: 3em;
+	font-weight: 300%;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	margin-bottom: 0em;
+	border: thick dotted black;
+}
+
+header nav {
+	text-align: center;
+	padding-bottom: 0.4em;
+	margin-top: 0.4em;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+a:link, a:visited {
+	color: #A9A9A9;
+	text-align: center;
+
+}
+
+
+article {
+	width: 80%;
+	height: 40%;
+	margin-left: 10%;
+	font-size: 1.4em;
+}
+
+#result {
+	font-size: 2.8em;
+}
+
