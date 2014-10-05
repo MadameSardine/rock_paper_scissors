@@ -11,3 +11,7 @@ end
 Then(/^I should see if I have won$/) do
   expect(page).to have_content('beat' || 'EVEN')
 end
+
+Given(/^I have played a game$/) do
+  visit'/new_game/result'
+end

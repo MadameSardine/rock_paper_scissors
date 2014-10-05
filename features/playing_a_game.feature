@@ -7,3 +7,8 @@ Feature: playing a game
 	Given I have registered
 	When I choose rock
 	Then I should see if I have won
+
+	Scenario: Playing again
+	Given I have played a game
+	When I follow "Play again"
+	Then I should see "choose one option"
