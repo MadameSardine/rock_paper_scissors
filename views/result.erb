@@ -1,14 +1,15 @@
-<a href="/new_game">New Game</a>
+<article>
+	<p>Player 1 chose: <%= @option1.name %> </p>
+	<p>Player 2 chose: <%= @option2.name %> </p>
 
-<p>Player 1 chose: <%= @option1.name %> </p>
-<p>Player 2 chose: <%= @option2.name %> </p>
-
-<% if @option2.class == @option1.class %>
-	<p>EVEN!</p>
-<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
-	<p><%= @option1.name %> beats <%= @option2.name %>. YOU WIN!</p>
-<% else %>
-	<p><%= @option2.name %> beats <%= @option1.name %>. YOU LOSE!</p>
-<% end %>
-
-<a href="/">Play again</a>
+	<% if @option2.class == @option1.class %>
+		<p id="result">EVEN!</p>
+	<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
+		<p><%= @option1.name %> beats <%= @option2.name %>.</p>
+		<p id="result"> YOU WIN!</p>
+	<% else %>
+		<p><%= @option2.name %> beats <%= @option1.name %>.</p>
+		<p id="result">YOU LOSE!</p>
+	<% end %>
+		<p><a href="/">Play again</a></p>
+</article>

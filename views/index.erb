@@ -1,19 +1,20 @@
-<a href="/new_game">New Game</a>
 
-<% if @player1 %>
-	<% if @player1 == "" %>
-		<h1>Please choose one option</h1>
-	<% else %>
-		<h1><%= @player1.capitalize %>, please choose one option</h1>
+<article class="option_list">
+	<% if @player1 %>
+		<% if @player1 == "" %>
+			<h1>Please choose one option</h1>
+		<% else %>
+			<h1><%= @player1.capitalize %>, please choose one option</h1>
+		<% end %>
+		<form action="/option" method="post">
+		<p><input type="radio" name="option" value="Rock">ROCK</p>
+		<p><input type="radio" name="option" value="Paper">PAPER</p>
+		<p><input type="radio" name="option" value="Scissors">SCISSORS</p>
+		<p></p>
+		<p><INPUT type="submit" value="Send"></p>
+		</form>
+
 	<% end %>
-
-	<form action="/option" method="post">
-	<input type="radio" name="option" value="Rock">ROCK<br>
-	<input type="radio" name="option" value="Paper">PAPER<br>
-	<input type="radio" name="option" value="Scissors">SCISSORS<br>
-	<INPUT type="submit" value="Send">
-	</form>
-
-<% end %>
+</article>
 
 

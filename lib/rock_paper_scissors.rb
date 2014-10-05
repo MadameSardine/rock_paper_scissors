@@ -8,6 +8,7 @@ require_relative 'scissors'
 class Rock_Paper_Scissors < Sinatra::Base
 
 	set :views, settings.root + '/../views/'
+  set :public_folder, settings.root + '/../public/'
 	enable :sessions
 
 	GAME = Game.new([Rock.new, Paper.new, Scissors.new])
@@ -37,8 +38,6 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/new_game/result' do
-  	# puts GAME.player1.inspect
-  	# puts GAME.random_option.inspect
   	@option1 =  GAME.player1.option
   	@option2 = GAME.random_option
   	erb :result
