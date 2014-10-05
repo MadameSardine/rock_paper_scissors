@@ -1,15 +1,40 @@
-<article>
-	<p>Player 1 chose: <%= @option1.name %> </p>
-	<p>Player 2 chose: <%= @option2.name %> </p>
-
-	<% if @option2.class == @option1.class %>
-		<p id="result">EVEN!</p>
-	<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
-		<p><%= @option1.name %> beats <%= @option2.name %>.</p>
-		<p id="result"> YOU WIN!</p>
-	<% else %>
-		<p><%= @option2.name %> beats <%= @option1.name %>.</p>
-		<p id="result">YOU LOSE!</p>
-	<% end %>
+<section id="resultsection">
+	<article id="left">
+		<% if @option1.class == Rock %>
+			<img src="http://www.clker.com/cliparts/p/G/a/s/t/g/rock-hi.png" alt="Rock">
+		<% elsif @option1.class == Paper %>
+			<img src="http://www.clker.com/cliparts/Y/t/o/V/q/F/paper-md.png" alt="Paper">
+		<% elsif @option1.class == Scissors %>
+			<img src="http://www.clker.com/cliparts/8/B/i/M/Y/Z/scissors.svg" alt="Scissors">
+		<% else %>
+		<% end %>
+	</article>
+	<article id="center">
+		<p>Player 1 chose: <%= @option1.name %> </p>
+		<p>Player 2 chose: <%= @option2.name %> </p>
+	
+		<% if @option2.class == @option1.class %>
+			<p id="result">EVEN!</p>
+		<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
+			<p><%= @option1.name %> beats <%= @option2.name %>.</p>
+			<p id="result"> YOU WIN!</p>
+		<% else %>
+			<p><%= @option2.name %> beats <%= @option1.name %>.</p>
+			<p id="result">YOU LOSE!</p>
+		<% end %>
 		<p><a href="/">Play again</a></p>
-</article>
+	</article>
+	<article id="right">
+		<% if @option2.class == Rock %>
+			<img src="http://www.clker.com/cliparts/p/G/a/s/t/g/rock-hi.png" alt="Rock">
+		<% elsif @option2.class == Paper %>
+			<img src="http://www.clker.com/cliparts/Y/t/o/V/q/F/paper-md.png" alt="Paper">
+		<% elsif @option2.class == Scissors %>
+			<img src="http://www.clker.com/cliparts/8/B/i/M/Y/Z/scissors.svg" alt="Scissors">
+		<% else %>
+		<% end %>
+	</article>
+</section>
+	
+
+

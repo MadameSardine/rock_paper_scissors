@@ -1,10 +1,10 @@
 
-<article class="option_list">
+<section>
 	<% if @player1 %>
 		<% if @player1 == "" %>
-			<h1>Please choose one option</h1>
+			<h2>Please choose one option</h2>
 		<% else %>
-			<h1><%= @player1.capitalize %>, please choose one option</h1>
+			<h2><%= @player1.capitalize %>, please choose one option:</h2>
 		<% end %>
 		<form action="/option" method="post">
 		<p><input type="radio" name="option" value="Rock">ROCK</p>
@@ -13,8 +13,7 @@
 		<p></p>
 		<p><INPUT type="submit" value="Send"></p>
 		</form>
-
 	<% end %>
-</article>
+</section
 
 
