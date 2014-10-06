@@ -1,6 +1,7 @@
 Given(/^I have registered$/) do
-  visit '/new_game'
-  click_button 'Register'
+	visit '/'
+	click_link 'New Game'
+	click_button 'Register'
 end
 
 When(/^I choose rock$/) do
@@ -9,7 +10,7 @@ When(/^I choose rock$/) do
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('Player 1 chose')
+  expect(page).to have_content('layer')
 end
 
 Given(/^I have played a game$/) do

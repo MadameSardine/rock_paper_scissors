@@ -1,10 +1,10 @@
 
 <section>
-	<% if @player1 %>
-		<% if @player1 == "" %>
+	<% if @player %>
+		<% if @player == "" %>
 			<h2>Please choose one option</h2>
 		<% else %>
-			<h2><%= @player1.capitalize %>, please choose one option:</h2>
+			<h2><%= @player.capitalize %>, please choose one option:</h2>
 		<% end %>
 		<form action="/option" method="post">
 		<p><input type="radio" name="option" value="Rock">ROCK</p>

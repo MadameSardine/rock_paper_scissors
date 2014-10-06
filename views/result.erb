@@ -1,3 +1,5 @@
+<% if @option1 && @option2 %>
+
 <section id="resultsection">
 	<article id="left">
 		<% if @option1.class == Rock %>
@@ -17,10 +19,10 @@
 			<p id="result">EVEN!</p>
 		<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
 			<p><%= @option1.name %> beats <%= @option2.name %>.</p>
-			<p id="result"> YOU WIN!</p>
+			<p id="result"> PLAYER 1 WINS!</p>
 		<% else %>
 			<p><%= @option2.name %> beats <%= @option1.name %>.</p>
-			<p id="result">YOU LOSE!</p>
+			<p id="result">PLAYER 2 WINS!</p>
 		<% end %>
 		<p><a href="/">Play again</a></p>
 	</article>
@@ -35,6 +37,12 @@
 		<% end %>
 	</article>
 </section>
+
+<% else %>
+<section>
+<p>Waiting for all players to make their pick</p>
+</section>
+<% end %>
 	
 
 

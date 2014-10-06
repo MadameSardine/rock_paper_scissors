@@ -15,6 +15,8 @@ class Rock_Paper_Scissors < Sinatra::Base
 
   get '/' do
   	@player1 = GAME.player1.name unless GAME.player1.nil?
+    @player2 = GAME.player2.name unless GAME.player2.nil?
+    @player = session[:me]
     erb :index
   end
 
@@ -36,14 +38,22 @@ class Rock_Paper_Scissors < Sinatra::Base
     else
       option_name = params[:option]
     	option = GAME.options.find{|option| option.name == option_name}
-    	GAME.player1.select(option)
+      if session[:me] == GAME.player1.name  
+    	   GAME.player1.select(option)
+      elsif session[:me] ==  GAME.player2.name
+         GAME.player2.select(option)
+      end
     	redirect '/new_game/result'
     end
   end
 
   get '/new_game/result' do
   	@option1 =  GAME.player1.option
-  	@option2 = GAME.random_option
+      if GAME.player2.nil?
+  	     @option2 = GAME.random_option
+      else
+        @option2 = GAME.player2.option
+      end
   	erb :result
   end
 
