@@ -9,7 +9,7 @@ When(/^I choose rock$/) do
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('beat' || 'EVEN')
+  expect(page).to have_content('Player 1 chose')
 end
 
 Given(/^I have played a game$/) do
