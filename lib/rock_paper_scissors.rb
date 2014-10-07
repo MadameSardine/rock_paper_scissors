@@ -57,6 +57,12 @@ class Rock_Paper_Scissors < Sinatra::Base
   	erb :result
   end
 
+  get '/reset' do
+    GAME.player1.option = nil unless GAME.player1.nil?
+    GAME.player2.option = nil unless GAME.player2.nil?
+    redirect '/'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
