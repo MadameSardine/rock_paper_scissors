@@ -21,7 +21,15 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/new_game' do
+    @player = session[:me] unless session[:me].nil?
+    session[:type] = "solo"
   	erb :new_game
+  end
+
+  get '/new_game_multiplayer' do
+    @player = session[:me] unless session[:me].nil?
+    session[:type] = "multi"
+    erb :new_game
   end
 
   post '/new_game/new_player' do
@@ -49,18 +57,15 @@ class Rock_Paper_Scissors < Sinatra::Base
 
   get '/new_game/result' do
   	@option1 =  GAME.player1.option
-      if GAME.player2.nil?
+      if session[:type] == "solo"
   	     @option2 = GAME.random_option
-      else
-        @option2 = GAME.player2.option
+      elsif session[:type] == "multi"
+          @option2 = GAME.player2.option unless GAME.player2.nil?
+      end
+      if GAME.player2.nil? 
+        "Waiting for a second player"
       end
   	erb :result
-  end
-
-  get '/reset' do
-    GAME.player1.option = nil unless GAME.player1.nil?
-    GAME.player2.option = nil unless GAME.player2.nil?
-    redirect '/'
   end
 
   # start the server if ruby file executed directly
