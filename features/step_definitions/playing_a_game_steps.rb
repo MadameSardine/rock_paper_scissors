@@ -1,5 +1,5 @@
-Given(/^I have registered$/) do
-	visit '/'
+Given(/^I have choosen to play vs robot$/) do
+  	visit '/'
 	click_link 'Play vs Robot'
 	click_button 'Register'
 end
@@ -10,13 +10,8 @@ When(/^I choose rock$/) do
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('layer')
+  expect(page).to have_content('WIN')
 end
 
-Given(/^I have played a game$/) do
-  visit'/new_game/result'
-end
 
-When(/^I don't choose an option$/) do
-  click_button 'Send'
-end
+

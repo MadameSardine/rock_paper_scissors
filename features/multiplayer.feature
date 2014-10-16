@@ -8,6 +8,11 @@ Feature: multiplayer
 		When I follow "Play vs Human"
 		Then I should see "What's your name?"
 
+	Scenario: Choosing an option vs human
+		Given I have choosen to play vs human
+		When I choose rock
+		Then I should see that the other human has to make a choice
+
 	Scenario: Registering a second player
 		Given I have chosen to play vs an human
 		When I register as the second player

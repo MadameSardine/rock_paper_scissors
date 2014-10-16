@@ -3,12 +3,8 @@ Feature: playing a game
 	As a registered player
 	I want to choose an option (rock, paper, scissors)
 
-	Scenario: Choosing an option
-		Given I have registered
+	Scenario: Choosing an option vs robot
+		Given I have choosen to play vs robot
 		When I choose rock
 		Then I should see if I have won
 
-	Scenario: Forgot to choose an option
-		Given I have registered
-		When I don't choose an option
-		Then I should see "choose one option"

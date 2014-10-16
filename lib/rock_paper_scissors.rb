@@ -56,14 +56,13 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/new_game/result' do
+    @player1 = GAME.player1.name unless GAME.player1.nil?
+    @player2 = GAME.player2.name unless GAME.player2.nil?
   	@option1 =  GAME.player1.option
       if session[:type] == "solo"
   	     @option2 = GAME.random_option
       elsif session[:type] == "multi"
           @option2 = GAME.player2.option unless GAME.player2.nil?
-      end
-      if GAME.player2.nil? 
-        "Waiting for a second player"
       end
   	erb :result
   end

@@ -16,13 +16,19 @@
 		<p>Player 2 chose: <%= @option2.name %> </p>
 	
 		<% if @option2.class == @option1.class %>
-			<p id="result">EVEN!</p>
+			<p id="result">EVEN, NO ONE WINS!</p>
 		<% elsif (@option2.class == Rock && @option1.beat_rock) || (@option2.class == Scissors && @option1.beat_scissors) || (@option2.class == Paper && @option1.beat_paper) %>
 			<p><%= @option1.name %> beats <%= @option2.name %>.</p>
-			<p id="result"> PLAYER 1 WINS!</p>
+			<p id="result"><%= @player1 %> WINS!</p>
 		<% else %>
 			<p><%= @option2.name %> beats <%= @option1.name %>.</p>
-			<p id="result">PLAYER 2 WINS!</p>
+			<p id="result">
+				<% if @player2.nil? %>
+					Robot WINS!
+				<% else %>
+					<%= @player2 %> WINS!
+				<% end %>
+			</p>
 		<% end %>
 	</article>
 	<article id="right">
