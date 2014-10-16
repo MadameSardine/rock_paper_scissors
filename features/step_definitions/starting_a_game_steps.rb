@@ -10,8 +10,9 @@ Then(/^I should see "(.*?)"$/) do |text|
   expect(page).to have_content(text)
 end
 
-Given(/^I am on the new game page$/) do
-  visit '/new_game'
+Given(/^I have choose to play vs robot$/) do
+  visit '/'
+  click_link 'Play vs Robot'
 end
 
 When(/^I register my name$/) do

@@ -9,11 +9,11 @@ Feature: Starting the game
 		Then I should see "What's your name?"
 
 	Scenario: Registering part 2
-		Given I am on the new game page
+		Given I have choose to play vs robot
 		When I register my name
 		Then I should be asked to "choose one option"
 
 	Scenario: Name not given
-		Given I am on the new game page
+		Given I have choose to play vs robot
 		When I dont input my name
 		Then I should be asked to "choose one option"

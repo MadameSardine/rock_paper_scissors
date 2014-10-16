@@ -29,6 +29,15 @@ header nav {
 	opacity: 0.7;
 }
 
+header nav ul {
+	display: inline;
+}
+
+header nav ul li{
+	float: left;
+	padding-left: 22%%;
+}
+
 h2 {
 	font-size: 1.4em;
 
