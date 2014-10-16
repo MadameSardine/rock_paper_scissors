@@ -5,7 +5,7 @@ Feature: Starting the game
 
 	Scenario: Registering
 		Given I am on the homepage
-		When I follow "New Game"
+		When I follow "Play vs Robot"
 		Then I should see "What's your name?"
 
 	Scenario: Registering part 2

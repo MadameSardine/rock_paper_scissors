@@ -1,6 +1,6 @@
 Given(/^I have registered$/) do
 	visit '/'
-	click_link 'New Game'
+	click_link 'Play vs Robot'
 	click_button 'Register'
 end
 
