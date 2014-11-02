@@ -1,4 +1,4 @@
-require 'sinatra/base'
+  krequire 'sinatra/base'
 require_relative 'player'
 require_relative 'game'
 require_relative'rock'
