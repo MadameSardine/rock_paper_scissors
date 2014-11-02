@@ -63,6 +63,6 @@ describe Game do
 	end
 
 	it "knows when there is a draw" do 
-		expect(game.assess_winner("Rock", "Rock")).to eq("DRAW!")
+		expect(game.assess_winner("Rock", "Rock")).to eq("DRAW! Nobody wins")
 	end
 end

@@ -1,19 +1,16 @@
-
 <section>
+	<form action="/new_player" method="post">
+	<h2>What's your name?</h2>
+	<p>
+		<input type="text" name="player_name" value="<%= @player %>">
+		<input type="submit" value="Register">
+	</p>
+	</form>
+
 	<% if @player %>
-		<% if @player == "" %>
-			<h2>Please choose one option</h2>
-		<% else %>
-			<h2><%= @player.capitalize %>, please choose one option:</h2>
-		<% end %>
-		<form action="/option" method="post">
-		<p><input type="radio" name="option" value="Rock">ROCK</p>
-		<p><input type="radio" name="option" value="Paper">PAPER</p>
-		<p><input type="radio" name="option" value="Scissors">SCISSORS</p>
-		<p></p>
-		<p><INPUT type="submit" value="Send"></p>
-		</form>
+		<h1><%= @player%>, please click on "Play" to start a game.</h1>
 	<% end %>
-</section
+</section>
+
 
 

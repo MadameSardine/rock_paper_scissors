@@ -9,11 +9,9 @@
 
 		<header>
 			<h1>Rock, Paper, Scissors</h1>
-			<nav><ul>
-					<li><a href="/new_game">Play vs Robot</a></li>
-					<li><a href="/new_game_multiplayer">Play vs Human</a></li>
-				</ul>
-			</nav>
+			<% if @player%>
+				<nav><a href="/new_game">Play </a></nav>
+			<% end %>
 		</header>
 
 		<main>

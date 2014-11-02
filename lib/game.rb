@@ -29,7 +29,7 @@ class Game
 	def assess_winner(option1, option2)
 		rules = {"Rock" => "Scissors", "Scissors" => "Paper", "Paper" => "Rock"}
 		if option1 == option2
-			"DRAW!"
+			"DRAW! Nobody wins"
 		elsif rules[option1] == option2
 			"Player 1 wins" 
 		else

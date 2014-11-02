@@ -1,7 +1,8 @@
 Given(/^I have choosen to play vs robot$/) do
   	visit '/'
-	click_link 'Play vs Robot'
-	click_button 'Register'
+  	fill_in('player_name', :with => 'Sandrine')
+  	click_button 'Register'
+	click_link 'Play'
 end
 
 When(/^I choose rock$/) do
@@ -10,7 +11,7 @@ When(/^I choose rock$/) do
 end
 
 Then(/^I should see if I have won$/) do
-  expect(page).to have_content('WIN')
+  expect(page).to have_content('wins')
 end
 
 

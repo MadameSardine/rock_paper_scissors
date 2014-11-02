@@ -5,15 +5,7 @@ Feature: Starting the game
 
 	Scenario: Registering
 		Given I am on the homepage
-		When I follow "Play vs Robot"
 		Then I should see "What's your name?"
-
-	Scenario: Registering part 2
-		Given I have choose to play vs robot
 		When I register my name
-		Then I should be asked to "choose one option"
+		Then I should see "Play"
 
-	Scenario: Name not given
-		Given I have choose to play vs robot
-		When I dont input my name
-		Then I should be asked to "choose one option"
