@@ -14,7 +14,7 @@ class Rock_Paper_Scissors < Sinatra::Base
 	GAME = Game.new([Rock.new, Paper.new, Scissors.new])
 
   get '/' do
-    @player = session[:me] unless session[:me].nil?
+    @player = session[:me]
     erb :index
   end
 
@@ -27,8 +27,8 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/new_game' do
-    GAME.player1.option = nil unless GAME.player1.option.nil?
-    @player = session[:me] unless session[:me].nil?
+    GAME.reset
+    @player = session[:me]
   	erb :new_game
   end
 
