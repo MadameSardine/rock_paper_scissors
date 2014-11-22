@@ -27,7 +27,7 @@ class Rock_Paper_Scissors < Sinatra::Base
   end
 
   get '/new_game' do
-    GAME.reset
+    # GAME.reset
     @player = session[:me]
   	erb :new_game
   end

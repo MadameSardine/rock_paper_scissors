@@ -19,3 +19,11 @@ Use the [special rules](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-
 * Rock beats Scissors
 * Scissors beats Paper
 * Paper beats Rock
+
+## Tools
+* Ruby
+* Sinatra
+* Heroku
+
+## Link to app
+[Rock Paper Scissors](http://stark-meadow-2211.herokuapp.com/)
